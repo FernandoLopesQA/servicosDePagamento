@@ -1,0 +1,24 @@
+{
+  "name": "servicosdepagamento",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FernandoLopesQA/servicosDePagamento.git"
+  },
+  "keywords": [],
+  "author": "Fernando Lopes",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/FernandoLopesQA/servicosDePagamento/issues"
+  },
+  "homepage": "https://github.com/FernandoLopesQA/servicosDePagamento#readme",
+  "dependencies": {
+    "mocha": "^11.7.5"
+  }
+}
