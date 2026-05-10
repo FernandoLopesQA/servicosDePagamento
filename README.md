@@ -1,11 +1,11 @@
 Função
 Crie uma classe que possua dois métodos: um para realizar pagamento e outro para consultar o último pagamento. - OK
 Pagamentos serão armazenados como objetos Javascript dentro de uma lista de pagamentos. - OK
-Cada pagamento terá as propriedades: Código de Barras, Empresa e Valor. -
-Quando um pagamento for realizado e o valor for maior que 100.00, - 
-o pagamento também terá a propriedade 'categoria' preenchida pela função como 'cara', - 
-caso contrário, a propriedade 'categoria' será preenchida pela função como 'padrão'. - 
-O método de consultar trará apenas o último pagamento. - 
+Cada pagamento terá as propriedades: Código de Barras, Empresa e Valor. - OK
+Quando um pagamento for realizado e o valor for maior que 100.00, - OK
+o pagamento também terá a propriedade 'categoria' preenchida pela função como 'cara', - OK
+caso contrário, a propriedade 'categoria' será preenchida pela função como 'padrão'. - OK
+O método de consultar trará apenas o último pagamento. - OK
   
   ex. 
   const servicoDePagamento = new ServicoDePagamento();
@@ -18,7 +18,9 @@ O método de consultar trará apenas o último pagamento. -
      categoria: 'cara'
   }
   
-  A entrega deve ser realizada via Github e o repositório deve ter a classe a pasta src e os testes dos métodos dessa classe dentro da pasta test usando Mocha e Node Assert.
+  A entrega deve ser realizada via Github - PENDENTE
+   e o repositório deve ter a classe a pasta src - OK
+   e os testes dos métodos dessa classe dentro da pasta test usando Mocha e Node Assert. PENDENTE
 
 
 Pensamento Lógico:
