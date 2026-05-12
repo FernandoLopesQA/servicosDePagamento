@@ -18,9 +18,9 @@ O método de consultar trará apenas o último pagamento. - OK
      categoria: 'cara'
   }
   
-  A entrega deve ser realizada via Github - PENDENTE
-   e o repositório deve ter a classe a pasta src - OK
-   e os testes dos métodos dessa classe dentro da pasta test usando Mocha e Node Assert. PENDENTE
+  A entrega deve ser realizada via Github - OK
+   e o repositório deve ter a classe na pasta src - OK
+   e os testes dos métodos dessa classe dentro da pasta test usando Mocha e Node Assert. OK
 
 
 Pensamento Lógico:
