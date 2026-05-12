@@ -8,7 +8,7 @@ export default class ServicosDePagamento {
 
     efetuarPagamento(codigoBarras, empresa, valor) {
 
-        if(!codigoBarras || !empresa || !valor || valor <= 0) {
+        if (!codigoBarras || !empresa || !valor || valor <= 0) {
             throw new Error('Informe todos os campos para prosseguir com o pagamento e o valor deve ser maior que 0.');
         }
 
@@ -30,14 +30,11 @@ export default class ServicosDePagamento {
     };
 
     consultarUltimoPagamento() {
+
+        if (this.#pagamentos.length === 0) {
+            throw new Error('Nenhum pagamento registrado na base de dados.');
+        };
+
         return this.#pagamentos.at(-1);
     };
 };
-
-// Bloco de testes da função
-// const servico = new ServicosDePagamento();
-// servico.efetuarPagamento('1234-5678-1', 'Empresa Teste 1', 100.01);
-// servico.efetuarPagamento('1234-5678-2', 'Empresa Teste 2', 100.00);
-// servico.efetuarPagamento('1234-5678-3', 'Empresa Teste 3', 99);
-// servico.efetuarPagamento('1234-5678-4', 'Empresa Teste 4', 101);
-// console.log(servico.consultarUltimoPagamento());
