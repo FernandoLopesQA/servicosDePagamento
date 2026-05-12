@@ -5,12 +5,80 @@ describe('Testes na classe de Serviços de Pagamento', () => {
 
     describe('Testes no método efetuarPagamento', () => {
 
-        // Implementar na função
-        // it('Deve retornar mensagem de erro quando algum dos dados não for passado nos parâmetros da função', () => {
-        //     // Arrange
-        //     // Act
-        //     // Assert
-        // });
+        it('Deve retornar mensagem de erro quando o código de barras não for passado nos parâmetros do método', () => {
+            // Arrange
+            const servicosDePagamento = new ServicosDePagamento();
+
+            // Act & Assert
+            assert.throws(
+                function () {
+                    servicosDePagamento.efetuarPagamento('', 'Sul Gás', 147.29);
+                },
+                {
+                    message: 'Informe todos os campos para prosseguir com o pagamento e o valor deve ser maior que 0.'
+                }
+            );
+        });
+
+        it('Deve retornar mensagem de erro quando a empresa não for informada nos parâmetros do método', () => {
+            // Arrange
+            const servicosDePagamento = new ServicosDePagamento();
+
+            // Act & Assert
+            assert.throws(
+                function () {
+                    servicosDePagamento.efetuarPagamento('7-891221-927787', '', 147.29);
+                },
+                {
+                    message: 'Informe todos os campos para prosseguir com o pagamento e o valor deve ser maior que 0.'
+                }
+            );
+        });
+
+        it('Deve retornar mensagem de erro quando o valor for passado como zero no método', () => {
+            // Arrange
+            const servicosDePagamento = new ServicosDePagamento();
+
+            // Act & Assert
+            assert.throws(
+                function () {
+                    servicosDePagamento.efetuarPagamento('7-891221-927787', 'Sul Gás', 0);
+                },
+                {
+                    message: 'Informe todos os campos para prosseguir com o pagamento e o valor deve ser maior que 0.'
+                }
+            );
+        });
+
+        it('Deve retornar mensagem de erro quando o valor não for passado no método', () => {
+            // Arrange
+            const servicosDePagamento = new ServicosDePagamento();
+
+            // Act & Assert
+            assert.throws(
+                function () {
+                    servicosDePagamento.efetuarPagamento('7-891221-927787', 'Sul Gás');
+                },
+                {
+                    message: 'Informe todos os campos para prosseguir com o pagamento e o valor deve ser maior que 0.'
+                }
+            );
+        });
+
+        it('Deve retornar mensagem de erro quando o valor for passado como negativo no método', () => {
+            // Arrange
+            const servicosDePagamento = new ServicosDePagamento();
+
+            // Act & Assert
+            assert.throws(
+                function () {
+                    servicosDePagamento.efetuarPagamento('7-891221-927787', 'Sul Gás', -100.00);
+                },
+                {
+                    message: 'Informe todos os campos para prosseguir com o pagamento e o valor deve ser maior que 0.'
+                }
+            );
+        });
 
         it('Deve salvar todos os dados passados por parâmetro nas propriedades do pagamento', () => {
             // Arrange
@@ -82,12 +150,21 @@ describe('Testes na classe de Serviços de Pagamento', () => {
             assert.equal(pagamentos.categoria, 'cara');
         });
 
-        // Implementar na função
-        // it('Deve retornar mensagem de erro quando não houver dados de pagamento na lista', () => {
-        //     // Arrange
-        //     // Act
-        //     // Assert
-        // });
+        it('Deve retornar mensagem de erro quando não houver dados de pagamento na lista', () => {
+
+            // Arrange
+            const servicosDePagamento = new ServicosDePagamento();
+
+            // Act & Assert
+            assert.throws(
+                function () {
+                    servicosDePagamento.consultarUltimoPagamento();
+                },
+                {
+                    message: 'Nenhum pagamento registrado na base de dados.'
+                }
+            );
+        });
 
     });
 });
