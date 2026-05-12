@@ -7,6 +7,11 @@ export default class ServicosDePagamento {
     };
 
     efetuarPagamento(codigoBarras, empresa, valor) {
+
+        if(!codigoBarras || !empresa || !valor || valor <= 0) {
+            throw new Error('Informe todos os campos para prosseguir com o pagamento e o valor deve ser maior que 0.');
+        }
+
         let categoria;
 
         if (valor > 100.00) {
